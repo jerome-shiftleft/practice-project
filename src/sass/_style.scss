@@ -1,4 +1,41 @@
 main {  
   overflow: auto;  
-  height: 100vh;  
+  height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  @media (max-width: 767px) {
+    display: block;
+  }
+}
+
+#content {  
+  //border: 1px solid #999;
+  width: calc(100% - 290px);
+  height: 100%;
+  padding: 10px 20px;
+
+  .input-fields {
+    .MuiTextField-root {
+      display: block;
+      width: 290px;
+      margin-bottom: 10px;
+      .MuiInputBase-root {
+        width: 100%;
+      }
+    }
+  }
+
+  .action-buttons {
+    display: flex;
+    justify-content: flex-start;
+    .MuiButton-root {
+      margin-right: 5px;
+      width: 100px;
+    }
+  }
+
+  @media (max-width: 767px) {
+    width: 100%;
+  }
+
 }
