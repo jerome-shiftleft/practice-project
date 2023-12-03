@@ -1,10 +1,14 @@
+import CssBaseline from "@mui/material/CssBaseline";
 import ProjectsSidebar from "./components/ProjectsSidebar";
 
 function App() {
   return (
-    <main className="h-screen my-8">
-      <ProjectsSidebar />
-    </main>
+    <>
+      <CssBaseline />
+      <main>
+        <ProjectsSidebar />
+      </main>
+    </>
   );
 }
 
