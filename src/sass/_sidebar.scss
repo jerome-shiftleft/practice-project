@@ -1,6 +1,12 @@
 #sidebar {
   color: $light-font-color;
-  padding: 1em;
+  padding: 20px;
+  width: 100%;
+  max-width: 290px;
+  $border-radius: 10px;
+  border-top-right-radius: $border-radius;
+  border-bottom-right-radius: $border-radius;
+  background-color: $bar-dark;
   h2 {
     margin-top: 0;
   }
