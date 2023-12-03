@@ -5,7 +5,7 @@ function Input({ label, inputType, ...props }) {
   return (
     <>
       {inputType === "textarea" ? (
-        <TextField multiline rows={3} size="small" label={label} {...props} />
+        <TextField multiline rows={4} size="small" label={label} {...props} />
       ) : inputType === "date" ? (
         <DatePicker label="Due Date" />
       ) : (
