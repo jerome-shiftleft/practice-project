@@ -6,9 +6,9 @@ function NewProject() {
     <>
       <div id="content">
         <div className="input-fields">
-          <Input label="Title"  />
-          <Input label="Description" textarea />
-          <Input label="Due Date"  />
+          <Input label="Title" inputType="text"  />
+          <Input label="Description" inputType="textarea" />
+          <Input label="Due Date" inputType="date" />
         </div>
         <div className="action-buttons">
           <Button variant="contained" color="secondary">Cancel</Button>
