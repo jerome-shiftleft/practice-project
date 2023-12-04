@@ -4,7 +4,7 @@ import Button from '@mui/material/Button';
 function NewProject() {
   return (
     <>
-      <div id="content">
+      <div id="new-project" className="content">
         <div className="input-fields">
           <Input label="Title" inputType="text"  />
           <Input label="Description" inputType="textarea" />

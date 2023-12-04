@@ -3,6 +3,7 @@ import { LocalizationProvider } from '@mui/x-date-pickers';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
 import ProjectsSidebar from "./components/ProjectsSidebar";
 import NewProject from "./components/NewProject";
+import NoProjectSelected from "./components/NoProjectSelected";
 
 function App() {
   return (
@@ -11,7 +12,8 @@ function App() {
       <LocalizationProvider dateAdapter={AdapterDayjs}>
         <main>
           <ProjectsSidebar />
-          <NewProject />
+          {/* <NewProject /> */}
+          <NoProjectSelected />
         </main>
       </LocalizationProvider>
     </>
