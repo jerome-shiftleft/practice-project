@@ -14,13 +14,21 @@ function App() {
   });
 
   function handleStartAddProject() {
-    // setProjectState(prevState => {
-    //   return {
-    //     ...prevState,
-    //     selectedProjectId: null
-    //   }
-    // });
-    console.log('adding project!');
+    setProjectState(prevState => {
+      return {
+        ...prevState,
+        selectedProjectId: null
+      }
+    });
+    // console.log('adding project!');
+  }
+
+  let content;
+
+  if(projectState.selectedProjectId === null) {
+    content = <NewProject />
+  } else if (projectState.selectedProjectId === undefined) {
+    content = <NoProjectSelected onStartAddProject={handleStartAddProject} />
   }
 
   return (
@@ -29,8 +37,7 @@ function App() {
       <LocalizationProvider dateAdapter={AdapterDayjs}>
         <main>
           <ProjectsSidebar onStartAddProject={handleStartAddProject} />
-          {/* <NewProject /> */}
-          <NoProjectSelected onStartAddProject={handleStartAddProject} />
+          {content}
         </main>
       </LocalizationProvider>
     </>
