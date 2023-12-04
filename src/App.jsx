@@ -1,3 +1,4 @@
+import {useState} from 'react';
 import CssBaseline from "@mui/material/CssBaseline";
 import { LocalizationProvider } from '@mui/x-date-pickers';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
@@ -6,14 +7,30 @@ import NewProject from "./components/NewProject";
 import NoProjectSelected from "./components/NoProjectSelected";
 
 function App() {
+
+  const [projectState, setProjectState] = useState({    
+    selectedProjectId: undefined,
+    projects: []
+  });
+
+  function handleStartAddProject() {
+    // setProjectState(prevState => {
+    //   return {
+    //     ...prevState,
+    //     selectedProjectId: null
+    //   }
+    // });
+    console.log('adding project!');
+  }
+
   return (
     <>
       <CssBaseline />
       <LocalizationProvider dateAdapter={AdapterDayjs}>
         <main>
-          <ProjectsSidebar />
+          <ProjectsSidebar onStartAddProject={handleStartAddProject} />
           {/* <NewProject /> */}
-          <NoProjectSelected />
+          <NoProjectSelected onStartAddProject={handleStartAddProject} />
         </main>
       </LocalizationProvider>
     </>

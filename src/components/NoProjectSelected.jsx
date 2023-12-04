@@ -1,7 +1,7 @@
 import Button from "@mui/material/Button";
 import noProjectImage from "../assets/no-projects.png";
 
-function NoProjectSelected() {
+function NoProjectSelected({onStartAddProject}) {
   return (
     <>
       <div id="no-project" className="content">
@@ -9,7 +9,7 @@ function NoProjectSelected() {
         <h2>No Project Selected</h2>
         <p>Select a project or get started with a new one</p>
         <p>
-          <Button variant="contained">Create a new project</Button>
+          <Button onClick={onStartAddProject} variant="contained">Create a new project</Button>
         </p>
       </div>
     </>

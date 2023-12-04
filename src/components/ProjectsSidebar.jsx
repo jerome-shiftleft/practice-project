@@ -1,6 +1,6 @@
 import Button from '@mui/material/Button';
 
-function ProjectsSidebar() {
+function ProjectsSidebar({onStartAddProject}) {
   return (
     <>
       <aside id='sidebar' className="sidebar">
@@ -8,7 +8,7 @@ function ProjectsSidebar() {
           Your Projects
         </h2>
         <div>
-          <Button variant="contained" size="small">+ Add Button</Button>
+          <Button onClick={onStartAddProject} variant="contained" size="small">+ Add Button</Button>
         </div>
       </aside>
     </>
