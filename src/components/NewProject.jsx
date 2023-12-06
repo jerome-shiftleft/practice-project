@@ -9,6 +9,8 @@ function NewProject({ onAdd }) {
   const title = useRef();
   const description = useRef();
   const dueDate = useRef();
+  const [dialogTitle, setDialogTitle] = useState();
+  const [dialogContent, setDialogContent] = useState();
 
   function handleSave() {
     console.log("saving!");
@@ -23,7 +25,9 @@ function NewProject({ onAdd }) {
       enteredDueDate.trim() === ""
     ) {
       console.log("validation error!");
-      modal.current.openDialog();
+      setDialogTitle('Validation Error!');
+      setDialogContent('Please check the input fields.');
+      modal.current.open();
       return;
     }
 
@@ -40,9 +44,8 @@ function NewProject({ onAdd }) {
 
   return (
     <>
-      <Modal ref={modal}>
-        <span>Invalid Input</span>
-        <span>Validation Error!</span>
+      <Modal ref={modal} title={dialogTitle}>
+        <span className="">{dialogContent}</span>
       </Modal>
 
       <div id="new-project" className="content">

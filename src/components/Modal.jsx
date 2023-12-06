@@ -9,13 +9,13 @@ import {
   DialogTitle,
 } from "@mui/material";
 
-const Modal = forwardRef(function Modal({ children }, ref) {
+const Modal = forwardRef(function Modal({ title, children }, ref) {
   const dialog = useRef();
   const [open, setOpen] = useState(false);
 
   useImperativeHandle(ref, () => {
     return {
-      openDialog() {
+      open() {
         //dialog.current.showModal();
         setOpen(true);
       },
@@ -28,7 +28,7 @@ const Modal = forwardRef(function Modal({ children }, ref) {
 
   return createPortal(
     <Dialog open={open} onClose={handleClose}>
-      {/* <DialogTitle>Title</DialogTitle> */}
+      <DialogTitle>{title}</DialogTitle>
       <DialogContent>
         <DialogContentText>{children}</DialogContentText>
       </DialogContent>
