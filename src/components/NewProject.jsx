@@ -1,12 +1,13 @@
-import { useRef } from "react";
+import { useState, useEffect, useRef } from "react";
+import DialogModal from "./Dialog";
 import Input from "./Input";
 import Button from "@mui/material/Button";
 
 function NewProject({ onAdd }) {
   const title = useRef();
   const description = useRef();
-  const dueDate = useRef();
-
+  const dueDate = useRef();  
+  
   function handleSave() {
     console.log("saving!");
     const enteredTitle = title.current.value;
@@ -19,7 +20,10 @@ function NewProject({ onAdd }) {
       enteredDescription.trim() === "" ||
       enteredDueDate.trim() === ""
     ) {
-      console.log('empty input!');
+      console.log("validation error!");
+      
+    } else {
+      
     }
 
     onAdd({
@@ -35,6 +39,8 @@ function NewProject({ onAdd }) {
 
   return (
     <>
+            
+
       <div id="new-project" className="content">
         <div className="input-fields">
           <Input ref={title} label="Title" inputType="text" />
