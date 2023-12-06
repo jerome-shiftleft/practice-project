@@ -8,8 +8,8 @@ function NewProject({ onAdd }) {
   const modal = useRef();
   const title = useRef();
   const description = useRef();
-  const dueDate = useRef();  
-  
+  const dueDate = useRef();
+
   function handleSave() {
     console.log("saving!");
     const enteredTitle = title.current.value;
@@ -24,7 +24,8 @@ function NewProject({ onAdd }) {
     ) {
       console.log("validation error!");
       modal.current.open();
-    } 
+      return;
+    }
 
     onAdd({
       title: enteredTitle,
@@ -39,8 +40,10 @@ function NewProject({ onAdd }) {
 
   return (
     <>
-            
-      <Modal ref={modal} />
+      <Modal ref={modal} buttonCaption="Close">
+        <h2>Invalid Input</h2>
+        <p>Validation Error!</p>
+      </Modal>
 
       <div id="new-project" className="content">
         <div className="input-fields">
