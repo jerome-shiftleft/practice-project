@@ -1,14 +1,20 @@
+import { useRef } from "react";
 import Input from "./Input";
 import Button from '@mui/material/Button';
 
 function NewProject() {
+
+  const title = useRef();
+  const description = useRef();
+  const dueDate = useRef();
+
   return (
     <>
       <div id="new-project" className="content">
         <div className="input-fields">
-          <Input label="Title" inputType="text"  />
-          <Input label="Description" inputType="textarea" />
-          <Input label="Due Date" inputType="date" />
+          <Input ref={title} label="Title" inputType="text"  />
+          <Input ref={description} label="Description" inputType="textarea" />
+          <Input ref={description} label="Due Date" inputType="date" />
         </div>
         <div className="action-buttons">
           <Button variant="contained" color="secondary">Cancel</Button>
