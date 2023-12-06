@@ -23,7 +23,7 @@ function NewProject({ onAdd }) {
       enteredDueDate.trim() === ""
     ) {
       console.log("validation error!");
-      modal.current.open();
+      modal.current.openDialog();
       return;
     }
 
@@ -40,9 +40,9 @@ function NewProject({ onAdd }) {
 
   return (
     <>
-      <Modal ref={modal} buttonCaption="Close">
-        <h2>Invalid Input</h2>
-        <p>Validation Error!</p>
+      <Modal ref={modal}>
+        <span>Invalid Input</span>
+        <span>Validation Error!</span>
       </Modal>
 
       <div id="new-project" className="content">
