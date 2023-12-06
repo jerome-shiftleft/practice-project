@@ -2,7 +2,7 @@ import { useRef } from "react";
 import Input from "./Input";
 import Button from "@mui/material/Button";
 
-function NewProject({onAdd}) {
+function NewProject({ onAdd }) {
   const title = useRef();
   const description = useRef();
   const dueDate = useRef();
@@ -13,18 +13,20 @@ function NewProject({onAdd}) {
     const enteredDescription = description.current.value;
     const enteredDueDate = dueDate.current.value;
 
-    // console.log("refs");
-    // console.log(enteredTitle);
-    // console.log(enteredDescription);
-    // console.log(enteredDueDate);
-
     // validation
+    if (
+      enteredTitle.trim() === "" ||
+      enteredDescription.trim() === "" ||
+      enteredDueDate.trim() === ""
+    ) {
+      console.log('empty input!');
+    }
 
     onAdd({
       title: enteredTitle,
       description: enteredDescription,
-      dueDate: enteredDueDate
-    })
+      dueDate: enteredDueDate,
+    });
 
     title.current.value = null;
     description.current.value = null;
