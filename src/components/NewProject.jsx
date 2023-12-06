@@ -2,7 +2,7 @@ import { useRef } from "react";
 import Input from "./Input";
 import Button from "@mui/material/Button";
 
-function NewProject() {
+function NewProject({onAdd}) {
   const title = useRef();
   const description = useRef();
   const dueDate = useRef();
@@ -17,6 +17,14 @@ function NewProject() {
     console.log(enteredTitle);
     console.log(enteredDescription);
     console.log(enteredDueDate);
+
+    // validation
+
+    onAdd({
+      title: enteredTitle,
+      description: enteredDescription,
+      dueDate: enteredDueDate
+    })
 
     title.current.value = null;
     description.current.value = null;
