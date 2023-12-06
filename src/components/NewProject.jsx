@@ -1,9 +1,11 @@
 import { useState, useEffect, useRef } from "react";
 import DialogModal from "./Dialog";
+import Modal from "./Modal";
 import Input from "./Input";
 import Button from "@mui/material/Button";
 
 function NewProject({ onAdd }) {
+  const modal = useRef();
   const title = useRef();
   const description = useRef();
   const dueDate = useRef();  
@@ -21,10 +23,8 @@ function NewProject({ onAdd }) {
       enteredDueDate.trim() === ""
     ) {
       console.log("validation error!");
-      
-    } else {
-      
-    }
+      modal.current.open();
+    } 
 
     onAdd({
       title: enteredTitle,
@@ -40,6 +40,7 @@ function NewProject({ onAdd }) {
   return (
     <>
             
+      <Modal ref={modal} />
 
       <div id="new-project" className="content">
         <div className="input-fields">
