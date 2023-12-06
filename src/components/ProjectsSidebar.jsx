@@ -13,7 +13,7 @@ function ProjectsSidebar({ onStartAddProject, projects }) {
         <ul id="project-list">
           {projects.map((project) => (
             <li key={project.id}>
-              <Button variant="contained" size="small">{project.title}</Button>
+              <Button size="small">{project.title}</Button>
             </li>
           ))}
         </ul>
