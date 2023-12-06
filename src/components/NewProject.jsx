@@ -13,10 +13,10 @@ function NewProject({onAdd}) {
     const enteredDescription = description.current.value;
     const enteredDueDate = dueDate.current.value;
 
-    console.log("refs");
-    console.log(enteredTitle);
-    console.log(enteredDescription);
-    console.log(enteredDueDate);
+    // console.log("refs");
+    // console.log(enteredTitle);
+    // console.log(enteredDescription);
+    // console.log(enteredDueDate);
 
     // validation
 

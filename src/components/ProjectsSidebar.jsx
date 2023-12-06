@@ -1,15 +1,22 @@
-import Button from '@mui/material/Button';
+import Button from "@mui/material/Button";
 
-function ProjectsSidebar({onStartAddProject}) {
+function ProjectsSidebar({ onStartAddProject, projects }) {
   return (
     <>
-      <aside id='sidebar' className="sidebar">
-        <h2 className="">
-          Your Projects
-        </h2>
+      <aside id="sidebar" className="sidebar">
+        <h2 className="">Your Projects</h2>
         <div>
-          <Button onClick={onStartAddProject} variant="contained" size="small">+ Add Button</Button>
+          <Button onClick={onStartAddProject} variant="contained" size="small">
+            + Add Button
+          </Button>
         </div>
+        <ul id="project-list">
+          {projects.map((project) => (
+            <li key={project.id}>
+              <Button variant="contained" size="small">{project.title}</Button>
+            </li>
+          ))}
+        </ul>
       </aside>
     </>
   );
