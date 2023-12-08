@@ -1,5 +1,4 @@
 import { useState, useEffect, useRef } from "react";
-import DialogModal from "./Dialog";
 import Modal from "./Modal";
 import Input from "./Input";
 import Button from "@mui/material/Button";
