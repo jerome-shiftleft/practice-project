@@ -3,7 +3,7 @@ import Modal from "./Modal";
 import Input from "./Input";
 import Button from "@mui/material/Button";
 
-function NewProject({ onAdd }) {
+function NewProject({ onAdd, onCancel }) {
   const modal = useRef();
   const title = useRef();
   const description = useRef();
@@ -54,7 +54,7 @@ function NewProject({ onAdd }) {
           <Input ref={dueDate} label="Due Date" inputType="date" />
         </div>
         <div className="action-buttons">
-          <Button variant="contained" color="secondary">
+          <Button onClick={onCancel} variant="contained" color="secondary">
             Cancel
           </Button>
           <Button onClick={handleSave} variant="contained">
